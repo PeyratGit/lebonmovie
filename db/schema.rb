@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_02_21_151256) do
+=======
+ActiveRecord::Schema.define(version: 2022_02_21_144817) do
+>>>>>>> e599ced5f9dbdaf6cf18ec565ea56d71efc6e97c
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "actors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -41,6 +46,8 @@ ActiveRecord::Schema.define(version: 2022_02_21_151256) do
     t.index ["director_id"], name: "index_movie_directors_on_director_id"
   end
 
+=======
+>>>>>>> e599ced5f9dbdaf6cf18ec565ea56d71efc6e97c
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -55,6 +62,9 @@ ActiveRecord::Schema.define(version: 2022_02_21_151256) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "movie_actors", "actors"
-  add_foreign_key "movie_directors", "directors"
+# <<<<<<< HEAD
+#   add_foreign_key "movie_actors", "actors"
+#   add_foreign_key "movie_directors", "directors"
+# =======
+# >>>>>>> e599ced5f9dbdaf6cf18ec565ea56d71efc6e97c
 end

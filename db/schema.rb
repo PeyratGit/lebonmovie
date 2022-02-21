@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_21_151256) do
+ActiveRecord::Schema.define(version: 2022_02_21_154256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,31 @@ ActiveRecord::Schema.define(version: 2022_02_21_151256) do
     t.index ["director_id"], name: "index_movie_directors_on_director_id"
   end
 
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.string "genre"
+    t.integer "year"
+    t.float "imdb_rating"
+    t.bigint "movie_director_id", null: false
+    t.bigint "movie_actor_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_actor_id"], name: "index_movies_on_movie_actor_id"
+    t.index ["movie_director_id"], name: "index_movies_on_movie_director_id"
+    t.index ["user_id"], name: "index_movies_on_user_id"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.float "rating"
+    t.string "status"
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_purchases_on_movie_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -56,7 +81,11 @@ ActiveRecord::Schema.define(version: 2022_02_21_151256) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-# >>>>>>> master
-#   add_foreign_key "movie_actors", "actors"
-#   add_foreign_key "movie_directors", "directors"
+  add_foreign_key "movie_actors", "actors"
+  add_foreign_key "movie_directors", "directors"
+  add_foreign_key "movies", "movie_actors"
+  add_foreign_key "movies", "movie_directors"
+  add_foreign_key "movies", "users"
+  add_foreign_key "purchases", "movies"
+  add_foreign_key "purchases", "users"
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_21_155221) do
+ActiveRecord::Schema.define(version: 2022_02_21_162100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,14 +46,11 @@ ActiveRecord::Schema.define(version: 2022_02_21_155221) do
     t.string "genre"
     t.integer "year"
     t.float "imdb_rating"
-    t.bigint "movie_director_id", null: false
-    t.bigint "movie_actor_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
-    t.index ["movie_actor_id"], name: "index_movies_on_movie_actor_id"
-    t.index ["movie_director_id"], name: "index_movies_on_movie_director_id"
+    t.string "director"
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
@@ -84,8 +81,6 @@ ActiveRecord::Schema.define(version: 2022_02_21_155221) do
 
   add_foreign_key "movie_actors", "actors"
   add_foreign_key "movie_directors", "directors"
-  add_foreign_key "movies", "movie_actors"
-  add_foreign_key "movies", "movie_directors"
   add_foreign_key "movies", "users"
   add_foreign_key "purchases", "movies"
   add_foreign_key "purchases", "users"

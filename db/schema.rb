@@ -10,44 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2022_02_21_151256) do
-=======
-ActiveRecord::Schema.define(version: 2022_02_21_144817) do
->>>>>>> e599ced5f9dbdaf6cf18ec565ea56d71efc6e97c
+
+ActiveRecord::Schema.define(version: 2022_02_21_162100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-  create_table "actors", force: :cascade do |t|
-    t.string "name"
+
+
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.string "genre"
+    t.integer "year"
+    t.float "imdb_rating"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
+    t.string "director"
+    t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
-  create_table "directors", force: :cascade do |t|
-    t.string "name"
+  create_table "purchases", force: :cascade do |t|
+    t.float "rating"
+    t.string "status"
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_purchases_on_movie_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
-  create_table "movie_actors", force: :cascade do |t|
-    t.bigint "actor_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["actor_id"], name: "index_movie_actors_on_actor_id"
-  end
-
-  create_table "movie_directors", force: :cascade do |t|
-    t.bigint "director_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["director_id"], name: "index_movie_directors_on_director_id"
-  end
-
-=======
->>>>>>> e599ced5f9dbdaf6cf18ec565ea56d71efc6e97c
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -62,9 +56,7 @@ ActiveRecord::Schema.define(version: 2022_02_21_144817) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-# <<<<<<< HEAD
-#   add_foreign_key "movie_actors", "actors"
-#   add_foreign_key "movie_directors", "directors"
-# =======
-# >>>>>>> e599ced5f9dbdaf6cf18ec565ea56d71efc6e97c
+  add_foreign_key "movies", "users"
+  add_foreign_key "purchases", "movies"
+  add_foreign_key "purchases", "users"
 end

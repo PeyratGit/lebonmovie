@@ -18,6 +18,7 @@ passwords = ["123456","azerty","nbvcxw","qsdfgh"]
 firsts_names = ["clément","julie","sidney","canelle"]
 lasts_names = ["peyrat","reynal","ouarzazi","deguitre"]
 directors = ["Steven Spielberg", "Christopher Nolan", "Quentin Tarantino", " Martin Scorsese", "Alfred Hitchcock", "Stanley Kubrick", "Tim Burton", ""]
+genres = ["Horror", "Comedy", "Action", "Romantic", "Blockbuster", "Drama", "Animation"]
 i = 0
 
 puts "Creating users..."
@@ -45,8 +46,9 @@ movies.each do |movie|
     imdb_rating: movie["vote_average"],
     description: movie['overview'],
     director: directors.sample,
-    genre: "genre placeholder",
+    genre: genres.sample,
     user_id: users.sample.id,
+    price: rand(10),
   )
 end
 puts "Movies creation done !"

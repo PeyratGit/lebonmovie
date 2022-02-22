@@ -8,8 +8,8 @@
 
 puts "Destroying data..."
 
-User.destroy_all
 Movie.destroy_all
+User.destroy_all
 
 puts "Done !"
 
@@ -49,6 +49,9 @@ movies.each do |movie|
     genre: genres.sample,
     user_id: users.sample.id,
     price: rand(10),
+    # photo: "https://www.themoviedb.org/t/p/w500#{movie["poster_path"]}"
   )
 end
+
 puts "Movies creation done !"
+# puts Movie(1).photo.key

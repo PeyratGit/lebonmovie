@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_22_105238) do
+ActiveRecord::Schema.define(version: 2022_02_22_105506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,8 +54,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_105238) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "movie_actors", "actors"
-  add_foreign_key "movie_directors", "directors"
   add_foreign_key "movies", "users"
   add_foreign_key "purchases", "movies"
   add_foreign_key "purchases", "users"

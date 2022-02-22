@@ -14,7 +14,33 @@ ActiveRecord::Schema.define(version: 2022_02_22_105506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  
+
+  create_table "actors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "directors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "movie_actors", force: :cascade do |t|
+    t.bigint "actor_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["actor_id"], name: "index_movie_actors_on_actor_id"
+  end
+
+  create_table "movie_directors", force: :cascade do |t|
+    t.bigint "director_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["director_id"], name: "index_movie_directors_on_director_id"
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.string "genre"

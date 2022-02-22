@@ -4,7 +4,11 @@ $spacer: 8px;
 
 .navbar-lewagon {
   background: white;
-  text-align: left;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+ text-align: left;
 }
 
 .navbar-lewagon .navbar-collapse {

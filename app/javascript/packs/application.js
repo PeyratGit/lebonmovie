@@ -15,3 +15,5 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 import "fontawesome-free"
+import { changeOnScroll } from "../plugins/change_navbar"
+changeOnScroll();

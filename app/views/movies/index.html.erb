@@ -10,12 +10,14 @@
   <div class="card-movie">
     <img src="https://media.senscritique.com/media/000020505831/source_big/dune.jpg">
     <div class="card-movie-infos">
-      <div>
+      <div class="card-movie-title">
         <h2><%= movie.title %></h2>
       </div>
-      <h2>Rating</h2>
+      <div>
+      <h2><%= movie.imdb_rating %><i class="fa fa-star text-warning"></i></h2>
+      <h2>X,X€</h2>
+      </div>
     </div>
-    <div class="card-movie-price">X,X€</div>
   </div>
   <% end %>
 </div>

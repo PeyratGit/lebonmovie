@@ -49,7 +49,7 @@ movies.each do |movie|
     genre: genres.sample,
     user_id: users.sample.id,
     price: rand(10),
-    # photo: "https://www.themoviedb.org/t/p/w500#{movie["poster_path"]}"
+    # photo: "https://www.themoviedb.org/t/p/w500#{movie["poster_path"]}",
   )
 end
 

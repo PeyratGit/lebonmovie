@@ -1,6 +1,8 @@
+$color: #992e38;
+
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  color: $color;
+  border: 1px solid $color;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -10,4 +12,13 @@
 
 .btn-ghost:hover {
   opacity: 1;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-bottom: 6px;
 }

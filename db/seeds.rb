@@ -18,7 +18,7 @@ passwords = ["123456","azerty","nbvcxw","qsdfgh"]
 firsts_names = ["clément","julie","sidney","canelle"]
 lasts_names = ["peyrat","reynal","ouarzazi","deguitre"]
 directors = ["Steven Spielberg", "Christopher Nolan", "Quentin Tarantino", " Martin Scorsese", "Alfred Hitchcock", "Stanley Kubrick", "Tim Burton", ""]
-genres = ["Horror", "Comedy", "Action", "Romantic", "Blockbuster", "Drama", "Animation"]
+genres = ["Horror", "Comedy", "Action", "Romance", "Blockbuster", "Drama", "Animation", "Fantasy", "Mystery", "Thriller", "Western"]
 i = 0
 
 puts "Creating users..."

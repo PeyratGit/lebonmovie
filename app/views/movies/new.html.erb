@@ -1,0 +1,19 @@
+<%= simple_form_for [@movie] do |f| %>
+<%= f.input :title %>
+<br>
+<%= f.input :genre %>
+<br>
+<%= f.input :year %>
+<br>
+<%= f.input :imdb_rating %>
+<br>
+<%= f.input :description %>
+<br>
+<%= f.input :director %>
+<br>
+<%= f.input :price %>
+<br>
+<%= f.association :user, label_method: :email, value_method: :id %>
+
+<button class="btn btn-success"><%= f.button :submit %>
+<% end %>

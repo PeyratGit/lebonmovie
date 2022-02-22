@@ -5,8 +5,6 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.string :genre
       t.integer :year
       t.float :imdb_rating
-      t.references :movie_director, null: false, foreign_key: true
-      t.references :movie_actor, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

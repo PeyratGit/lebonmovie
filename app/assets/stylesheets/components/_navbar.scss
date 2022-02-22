@@ -1,14 +1,14 @@
-$color: #4c4c4c;
+$color: white;
 $spacer: 8px;
 
 
 .navbar-lewagon {
-  background: white;
-  position: absolute;
+  background: transparent;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
- text-align: left;
+  text-align: left;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -21,6 +21,6 @@ $spacer: 8px;
   justify-content: left;
 }
 
-.navbar {
-  justify-content: center;
+.navbar-light .navbar-nav .nav-link {
+  color: white;
 }

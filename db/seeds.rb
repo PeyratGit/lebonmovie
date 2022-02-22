@@ -6,12 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Destroying data..."
+
+User.destroy_all
+Movie.destroy_all
+
+puts "Done !"
+
 emails = ["clement.peyrat@gmail.com","reynal.julie@gmail.com","ouarzazi.sidney@gmail.com","deguitre.canelle@gmail.com"]
 passwords = ["123456","azerty","nbvcxw","qsdfgh"]
 firsts_names = ["clément","julie","sidney","canelle"]
 lasts_names = ["peyrat","reynal","ouarzazi","deguitre"]
+directors = ["Steven Spielberg", "Christopher Nolan", "Quentin Tarantino", " Martin Scorsese", "Alfred Hitchcock", "Stanley Kubrick", "Tim Burton", ""]
+genres = ["Horror", "Comedy", "Action", "Romance", "Blockbuster", "Drama", "Animation", "Fantasy", "Mystery", "Thriller", "Western"]
 i = 0
 
+puts "Creating users..."
 4.times do
   User.create!(
     email: emails[i],
@@ -21,21 +31,24 @@ i = 0
   )
   i += 1
 end
-
+puts "Users creation done !"
 users = User.all
 
 require 'open-uri'
 
 movies= JSON.parse(URI.open("http://tmdb.lewagon.com/movie/popular").read)["results"]
 
+puts "Creating movies..."
 movies.each do |movie|
   Movie.create!(
     title: movie['title'],
     year: movie['release_date'].first(4),
     imdb_rating: movie["vote_average"],
     description: movie['overview'],
-    director: "director placeholder",
-    genre: "genre placeholder",
+    director: directors.sample,
+    genre: genres.sample,
     user_id: users.sample.id,
+    price: rand(10),
   )
 end
+puts "Movies creation done !"

@@ -1,0 +1,21 @@
+<div class="form-container">
+<%= simple_form_for [@movie] do |f| %>
+<%= f.input :title  %>
+<br>
+<%= f.input :genre %>
+<br>
+<%= f.input :year %>
+<br>
+<%= f.input :imdb_rating %>
+<br>
+<%= f.input :description %>
+<br>
+<%= f.input :director %>
+<br>
+<%= f.input :price %>
+<br>
+<%= f.input :photo, as: :file %>
+<br>
+<%= f.button :submit, class:"btn btn-ghost" %>
+<% end %>
+</div>

@@ -8,16 +8,19 @@
 <div class="card-movie-grid">
   <% @movies.each do |movie| %>
   <div class="card-movie">
-    <img src="https://media.senscritique.com/media/000020505831/source_big/dune.jpg">
+    <%= cl_image_tag movie.photo.key %>
+    <%# <img src="https://media.senscritique.com/media/000020505831/source_big/dune.jpg"> %>
     <div class="card-movie-infos">
       <div class="card-movie-title">
         <h2><%= movie.title %></h2>
       </div>
       <div>
       <h2><%= movie.imdb_rating %><i class="fa fa-star text-warning"></i></h2>
-      <h2>X,X€</h2>
+      <h2><%= movie.price %></h2>
       </div>
     </div>
   </div>
   <% end %>
 </div>
+
+<%# , height: 300, width: 400, crop: :fill %>

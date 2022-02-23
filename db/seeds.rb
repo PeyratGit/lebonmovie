@@ -13,7 +13,7 @@ User.destroy_all
 
 puts "Done !"
 
-emails = ["clement.peyrat@gmail.com","reynal.julie@gmail.com","ouarzazi.sidney@gmail.com","deguitre.canelle@gmail.com"]
+emails = ["peyrat.clement@gmail.com","reynal.julie@gmail.com","ouarzazi.sidney@gmail.com","deguitre.canelle@gmail.com"]
 passwords = ["123456","azerty","nbvcxw","qsdfgh"]
 firsts_names = ["clément","julie","sidney","canelle"]
 lasts_names = ["peyrat","reynal","ouarzazi","deguitre"]

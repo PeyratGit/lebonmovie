@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
+    @movie.user = current_user
     if @movie.save
       redirect_to movie_path(@movie)
     else
@@ -32,6 +33,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :price, :user_id, :description, :year, :director, :imdb_rating, :genre)
+    params.require(:movie).permit(:title, :price, :description, :year, :director, :imdb_rating, :genre)
   end
 end

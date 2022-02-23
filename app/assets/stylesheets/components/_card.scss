@@ -15,7 +15,12 @@
   font-weight: bold;
   border-radius: 5px;
   margin: 16px;
+  color: white;
 
+  a {
+    color: white !important;
+    text-decoration: none !important;
+  }
 }
 
 

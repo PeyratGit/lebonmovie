@@ -1,20 +1,26 @@
 const changeOnScroll = () => {
-  const navbar = document.getElementById('navbar')
-  const navlinks = document.querySelectorAll(".nav-link")
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll(".nav-link");
+  const bannerHome = document.querySelector(".banner-home");
 
-  if (navbar) {
+
+
+  if (navbar && bannerHome) {
+    navLinks.forEach((el) => el.style.color = 'white')
+
     window.onscroll = function() {
-      console.log(window.scrollY)
       if (window.scrollY >= 360) {
-        navbar.style.backgroundColor = 'white'
-        navlinks.forEach((el) => el.style.color = 'black')
+        navbar.style.backgroundColor = 'white';
+        navLinks.forEach((el) => el.style.color = 'black');
+        search_query.style.border = '1px solid black';
       } else {
-        navbar.style.backgroundColor = 'transparent'
-        navlinks.forEach((el) => el.style.color = 'white')
+        navbar.style.backgroundColor = 'transparent';
+        navLinks.forEach((el) => el.style.color = 'white');
+        search_query.style.border = '1px solid black';
       }
     }
   }
 
 }
 
-export { changeOnScroll};
+export { changeOnScroll };

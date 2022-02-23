@@ -3,7 +3,8 @@ const changeOnScroll = () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const bannerHome = document.querySelector(".banner-home");
 
-
+  console.log(bannerHome);
+  console.log(navbar);
 
   if (navbar && bannerHome) {
     console.log('Hey')
@@ -11,7 +12,7 @@ const changeOnScroll = () => {
     navbar.style.background = "transparent";
 
     window.onscroll = function() {
-      if (window.scrollY >= 360) {
+      if (window.scrollY >= 350) {
         navbar.style.backgroundColor = 'white';
         navLinks.forEach((el) => el.style.color = 'black');
         search_query.style.border = '1px solid black';

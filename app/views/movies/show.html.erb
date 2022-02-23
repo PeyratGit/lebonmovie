@@ -1,36 +1,42 @@
 
 <div class="card-product">
-  <h1><strong>Title :</strong><%= @movie.title %></h1>
-    <!-- MOVIE YEAR -->
-    <div class="card-date">
-      <p><strong>Year : </strong><%= @movie.year %></p>
+    <%= cl_image_tag(@movie.photo.key) %>
+    <div class="card-product-infos">
+      <div class="title">
+        <h1><strong> Title :</strong><%= @movie.title %></h1>
+      </div>
+        <!-- MOVIE YEAR -->
+        <div class="card-date">
+          <p><strong> Year : </strong><%= @movie.year %></p>
+        </div>
+        <!-- MOVIE CATEGORY -->
+        <div class="card-genre">
+          <p><strong> Category : </strong> <%= @movie.genre %></p>
+        </div>
+        <!-- MOVIE DIRECTOR -->
+        <div class="card-director">
+          <p><strong> Director : </strong><%= @movie.director %></p>
+        </div>
+        <!-- MOVIE DESCRIPTION -->
+        <div class="card-description">
+          <p><strong> Description : </strong><%= @movie.description %></p>
+        </div>
+        <!-- MOVIE RATING -->
+        <div class="card-rating">
+          <p><strong> Rating : </strong><%= @movie.imdb_rating %></p>
+        </div>
+        <!-- MOVIE USER -->
+        <div class="card-user">
+          <p><strong> First Name : </strong><%= @movie.user.first_name%></p>
+        </div>
+        <!-- MOVIE PRICE -->
+        <div class="card-price">
+          <p><strong> Price : </strong><%= @movie.price %></p>
+        </div>
+      </div>
     </div>
-    <!-- MOVIE CATEGORY -->
-    <div class="card-genre">
-      <p><strong> Category : </strong> <%= @movie.genre %></p>
-    </div>
-    <!-- MOVIE DIRECTOR -->
-    <div class="card-director">
-      <p><strong> Director : </strong><%= @movie.director %></p>
-    </div>
-    <!-- MOVIE DESCRIPTION -->
-    <div class="card-description">
-      <p><strong>description : </strong><%= @movie.description %></p>
-    </div>
-    <!-- MOVIE RATING -->
-    <div class="card-rating">
-      <p><strong>Rating : </strong><%= @movie.imdb_rating %></p>
-    </div>
-    <!-- MOVIE USER -->
-    <div class="card-user">
-      <p><strong>User : </strong><%= @movie.user_id %></p>
-    </div>
-    <!-- MOVIE PRICE -->
-    <div class="card-price">
-      <p><strong>Price : </strong><%= @movie.price %></p>
-    </div>
-</div>
-  <div class="btn">
-    <%= link_to 'Back Homepage', movies_path(@movies), class: "btn btn-ghost"%>
-    <%= link_to 'Purchase', purchases_path(@purchases), class: "btn btn-ghost"%>
+      <div class="btn">
+        <%= link_to 'Back Homepage', movies_path(@movies), class: "btn btn-ghost"%>
+        <%= link_to 'Purchase', purchases_path(@purchases), class: "btn btn-ghost"%>
+      </div>
 </div>

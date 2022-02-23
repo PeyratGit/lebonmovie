@@ -58,7 +58,7 @@ movies.first(20).each do |movie|
     director: directors.sample,
     genre: movie_genre,
     user_id: users.sample.id,
-    price: rand(10),
+    price: rand(1.00..10).round(2),
   )
   file_url = "https://www.themoviedb.org/t/p/w500#{movie["poster_path"]}"
   movies_models = Movie.all

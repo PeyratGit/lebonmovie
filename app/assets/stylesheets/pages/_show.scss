@@ -23,7 +23,7 @@ $color: #992e38;
   justify-content: center;
 }
 
-h1 {
+h1, h2 {
   font-size: 26px;
   font-weight: bold;
   margin: 0;
@@ -47,4 +47,13 @@ h1 {
   flex-wrap: wrap;
   align-content: center;
   margin-bottom: 6px;
+}
+
+.card-product img {
+  width: 50%;
+	height: 50%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 45%;
+  margin-right: 45%;
 }

@@ -33,10 +33,8 @@
         <div class="card-price">
           <p><strong> Price : </strong><%= @movie.price %></p>
         </div>
-      </div>
     </div>
       <div class="btn">
-        <%= link_to 'Back Homepage', movies_path(@movies), class: "btn btn-ghost"%>
+        <%= link_to 'Back Homepage', root_path, class: "btn btn-ghost"%>
         <%= link_to 'Purchase', purchases_path(@purchases), class: "btn btn-ghost"%>
-      </div>
-</div>
+  </div>

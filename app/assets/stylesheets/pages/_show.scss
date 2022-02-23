@@ -1,17 +1,17 @@
 $color: #992e38;
 
 .card-product {
-  width: 50%;
+  width: 61%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 4px;
   margin: auto;
   background-color: white;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: stretch;
-  justify-content: center;
-  align-items: flex-start;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: center;
   padding: auto;
   margin-top: 166px;
   border-radius: 2%;
@@ -47,4 +47,9 @@ h1 {
   flex-wrap: wrap;
   align-content: center;
   margin-bottom: 6px;
+}
+
+.card-product img {
+  width: 50%;
+  margin-top: 2%;
 }

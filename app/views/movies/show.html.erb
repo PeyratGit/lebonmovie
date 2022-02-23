@@ -1,9 +1,10 @@
+
 <div class="card-product">
-    <div class="photo">
-      <%= cl_image_tag (@movie.photo.key) %>
-    </div>
+    <%= cl_image_tag(@movie.photo.key) %>
+    <div class="card-product-infos">
       <div class="title">
-        <h1><strong> Title : </strong><%= @movie.title %></h1>
+        <h1><strong> Title :</strong><%= @movie.title %></h1>
+
       </div>
         <!-- MOVIE YEAR -->
         <div class="card-date">
@@ -11,7 +12,7 @@
         </div>
         <!-- MOVIE CATEGORY -->
         <div class="card-genre">
-          <p><strong> Category : </strong> <%= @movie.genre%></p>
+          <p><strong> Category : </strong> <%= @movie.genre %></p>
         </div>
         <!-- MOVIE DIRECTOR -->
         <div class="card-director">
@@ -22,12 +23,12 @@
           <p><strong> Description : </strong><%= @movie.description %></p>
         </div>
         <!-- MOVIE RATING -->
-        <div class="card-rating">
-          <p><strong >Rating : </strong><%= @movie.imdb_rating %></p>
+          <p><strong> Rating : </strong><%= @movie.imdb_rating %></p>
         </div>
         <!-- MOVIE USER -->
         <div class="card-user">
-          <p><strong> First Name : </strong><%= @movie.user.first_name %></p>
+          <p><strong> First Name : </strong><%= @movie.user.first_name%></p>
+
         </div>
         <!-- MOVIE PRICE -->
         <div class="card-price">

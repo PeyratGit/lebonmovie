@@ -1,7 +1,6 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 100vh;
 }
 
 .card-category {
@@ -37,6 +36,19 @@
   position: relative;
 }
 
+.card-movie-genre {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  color: white;
+  padding: 2px 9px;
+  font-size: 12px;
+  border-radius: 7px;
+  background: #1EDD88;
+  opacity: 0.9;
+  // text-shadow: 1px 1px 3px rgb(0 0 0);
+}
+
 .card-movie > img {
   height: 200px;
   width: 100%;
@@ -67,11 +79,10 @@
   width: 80%;
 }
 
-.card-movie-price {
-  position: absolute;
-  right: 15px;
-  bottom: 2px;
+.card-movie-details {
+  text-align: center;
 }
+
 
 // Smallest device
 @media (min-width: 300px) and (max-width:100px) {

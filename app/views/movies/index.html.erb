@@ -1,23 +1,7 @@
-<h1>test</h1>
-<div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://media.senscritique.com/media/000020505831/source_big/dune.jpg')">
+<div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1509281373149-e957c6296406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=856&q=80);">
   <div class="container">
     <h1><strong>List of </strong>  movies</h1>
   </div>
 </div>
 
-<div class="card-movie-grid">
-  <% @movies.each do |movie| %>
-  <div class="card-movie">
-    <img src="https://media.senscritique.com/media/000020505831/source_big/dune.jpg">
-    <div class="card-movie-infos">
-      <div class="card-movie-title">
-        <h2><%= movie.title %></h2>
-      </div>
-      <div>
-      <h2><%= movie.imdb_rating %><i class="fa fa-star text-warning"></i></h2>
-      <h2>X,X€</h2>
-      </div>
-    </div>
-  </div>
-  <% end %>
-</div>
+<%= render 'shared/card-movie-grid' %>

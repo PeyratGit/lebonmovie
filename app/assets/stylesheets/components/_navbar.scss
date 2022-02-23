@@ -3,7 +3,6 @@ $spacer: 8px;
 
 
 .navbar-lewagon {
-  background: transparent;
   position: fixed;
   width: 100%;
   top: 0;
@@ -12,6 +11,7 @@ $spacer: 8px;
   display: flex;
   align-items: center;
   height: 65px;
+  background: transparent;
 }
 
 .navbar-lewagon .navbar-collapse {

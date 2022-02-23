@@ -18,7 +18,7 @@ passwords = ["123456","azerty","nbvcxw","qsdfgh"]
 firsts_names = ["clément","julie","sidney","canelle"]
 lasts_names = ["peyrat","reynal","ouarzazi","deguitre"]
 directors = ["Steven Spielberg", "Christopher Nolan", "Quentin Tarantino", " Martin Scorsese", "Alfred Hitchcock", "Stanley Kubrick", "Tim Burton", ""]
-genres = ["Horror", "Comedy", "Action", "Romance", "Blockbuster", "Drama", "Animation", "Fantasy", "Mystery", "Thriller", "Western"]
+# genres = ["Horror", "Comedy", "Action", "Romance", "Blockbuster", "Drama", "Animation", "Fantasy", "Mystery", "Thriller", "Western"]
 i = 0
 
 puts "Creating users..."
@@ -40,14 +40,23 @@ movies = JSON.parse(URI.open("http://tmdb.lewagon.com/movie/popular").read)["res
 
 puts "Creating movies..."
 i = 0
-movies.first(11).each do |movie|
+movie_genre = ""
+
+movies.first(20).each do |movie|
+  genre_list = JSON.parse(URI.open("http://tmdb.lewagon.com/genre/movie/list").read)["genres"]
+  genre_list.each do |genre|
+    if genre["id"] == movie["genre_ids"][0]
+      movie_genre = genre["name"]
+    end
+  end
+
   Movie.create!(
     title: movie['title'],
     year: movie['release_date'].first(4),
     imdb_rating: movie["vote_average"],
     description: movie['overview'],
     director: directors.sample,
-    genre: genres.sample,
+    genre: movie_genre,
     user_id: users.sample.id,
     price: rand(10),
   )

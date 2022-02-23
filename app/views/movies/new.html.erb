@@ -14,8 +14,8 @@
 <br>
 <%= f.input :price %>
 <br>
-<%# <%= f.association :user, label_method: :email, value_method: :id %>
-
+<%= f.input :photo, as: :file %>
+<br>
 <%= f.button :submit, class:"btn btn-ghost" %>
 <% end %>
 </div>

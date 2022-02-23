@@ -6,7 +6,9 @@ const changeOnScroll = () => {
 
 
   if (navbar && bannerHome) {
+    console.log('Hey')
     navLinks.forEach((el) => el.style.color = 'white')
+    navbar.style.background = "transparent";
 
     window.onscroll = function() {
       if (window.scrollY >= 360) {

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="form-container">
 <%= simple_form_for [@movie] do |f| %>
 <%= f.input :title  %>
 <br>
@@ -15,8 +15,6 @@
 <%= f.input :price %>
 <br>
 <%= f.input :photo, as: :file %>
-<br>
-<%= f.association :user, label_method: :email, value_method: :id %>
 <br>
 <%= f.button :submit, class:"btn btn-ghost" %>
 <% end %>

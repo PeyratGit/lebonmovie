@@ -1,0 +1,27 @@
+$color: #992e38;
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7%;
+}
+
+#new_movie {
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form{
+  label {
+    color:$color;
+  }
+  .mb-3 {
+    flex: 48%;
+    margin-bottom: 5px !important;
+    margin-right: 10px !important;
+  }
+}

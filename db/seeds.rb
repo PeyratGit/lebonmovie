@@ -36,10 +36,11 @@ users = User.all
 
 require 'open-uri'
 
-movies= JSON.parse(URI.open("http://tmdb.lewagon.com/movie/popular").read)["results"]
+movies = JSON.parse(URI.open("http://tmdb.lewagon.com/movie/popular").read)["results"]
 
 puts "Creating movies..."
-movies.each do |movie|
+i = 0
+movies.first(11).each do |movie|
   Movie.create!(
     title: movie['title'],
     year: movie['release_date'].first(4),
@@ -49,8 +50,14 @@ movies.each do |movie|
     genre: genres.sample,
     user_id: users.sample.id,
     price: rand(10),
-    # photo: "https://www.themoviedb.org/t/p/w500#{movie["poster_path"]}",
   )
+  file_url = "https://www.themoviedb.org/t/p/w500#{movie["poster_path"]}"
+  movies_models = Movie.all
+  movies_models[i].photo.attach(
+    io: URI.open(file_url),
+    filename: "file#{i}.jpg"
+  )
+  i += 1
 end
 
 puts "Movies creation done !"

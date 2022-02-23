@@ -3,6 +3,34 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  def action
+    @movies = Movie.where(genre: "Action")
+  end
+
+  def thriller
+    @movies = Movie.where(genre: "Thriller")
+  end
+
+  def horror
+    @movies = Movie.where(genre: "Horror")
+  end
+
+  def comedy
+    @movies = Movie.where(genre: "Comedy")
+  end
+
+  def animation
+    @movies = Movie.where(genre: "Animation")
+  end
+
+  def crime
+    @movies = Movie.where(genre: "Crime")
+  end
+
+  def fantasy
+    @movies = Movie.where(genre: "Fantasy")
+  end
+
   def show
     @movie = Movie.find(params[:id])
   end

@@ -26,6 +26,12 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   margin: 16px 32px;
+
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
 }
 
 .card-movie {
@@ -34,6 +40,7 @@
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
+
 }
 
 .card-movie-genre {

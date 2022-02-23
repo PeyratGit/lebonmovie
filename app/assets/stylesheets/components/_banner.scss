@@ -5,9 +5,10 @@
   padding: 150px 0;
   height: 400px;
   align-content: center;
+  margin-top: -100px; // bidouille
 }
 
-.banner-home h1 {
+.banner-home h2 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -33,7 +34,7 @@
   align-content: center;
 }
 
-.banner-index h1 {
+.banner-index h2 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);

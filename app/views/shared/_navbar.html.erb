@@ -32,7 +32,11 @@
             <%= link_to "Sell", new_movie_path, class:"nav-link", id: "sell-btn" %>
           </li>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://ca.slack-edge.com/T02NE0241-U02T5R31CSJ-e1918f086a29-192" />
+            <% if user_signed_in? %>
+              <%= cl_image_tag (current_user.photo.key), class:"avatar dropdown-toggle", id:"navbarDropdown", data: {'bs-toggle': "dropdown"}, aria: {'haspopup': "true"}, aria: {'expanded': "false"} %>
+            <% else %>
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png" />
+            <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Login", new_user_session_path, class:"dropdown-item" %>
               <%= link_to "Register", new_user_registration_path, class:"dropdown-item" %>

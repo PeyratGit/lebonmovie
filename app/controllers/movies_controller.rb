@@ -65,6 +65,10 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def my_movies
+    @movies = Movie.where(user: current_user)
+  end
+
   private
 
   def movie_params

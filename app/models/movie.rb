@@ -5,4 +5,10 @@ class Movie < ApplicationRecord
   has_one_attached :photo
   validates :title, :description, presence: true
   validates :description, length: { minimum: 10 }
+  include PgSearch::Model
+  pg_search_scope :search_full_text,
+    against: [ :title, :genre, :year, :imdb_rating, :description, :director],
+    using: {
+      tsearch: { prefix: true}
+    }
 end

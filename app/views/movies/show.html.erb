@@ -35,7 +35,9 @@
         </div>
     </div>
       <div class="btn">
-        <%= link_to 'Edit', edit_movie_path, class: "btn btn-ghost"%>
-        <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost" %>
+        <% if @movie.user == current_user %>
+          <%= link_to 'Edit', edit_movie_path, class: "btn btn-ghost"%>
+          <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost" %>
+        <% end %>
         <%= link_to 'Purchase', purchases_path(@purchases), class: "btn btn-ghost"%>
       </div>

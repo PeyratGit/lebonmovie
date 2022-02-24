@@ -20,7 +20,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new
     @purchase.movie = @movie
     @purchase.user = current_user
-    @purchase.status = "pending"
+    @purchase.status = "Pending"
     if @purchase.save
       redirect_to bookings_purchases_path
     else
@@ -32,8 +32,12 @@ class PurchasesController < ApplicationController
   end
 
   def update
+    @purchase = Purchase.find(params[:id])
+    @purchase.status = params[:status]
+    @purchase.save
+    redirect_to requests_purchases_path
   end
-  
+
   def rate
   end
 

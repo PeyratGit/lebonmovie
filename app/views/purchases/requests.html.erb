@@ -9,16 +9,33 @@
     </li>
   </ul>
   </div>
-  <% purchases = Purchase.where(user: current_user) %>
-  <% purchases.each do |purchase| %>
+  <% purchases = Purchase.where('movie_id IN (?)', Movie.where(user: current_user).map { |movie| movie.id } ) %>
+  <% purchases.reverse_each do |purchase| %>
   <div class="card-purchase mb-2">
     <%= cl_image_tag purchase.movie.photo.key %>
     <div class="card-purchase-infos">
     <div class="card-purchase-details">
      <h2><%= purchase.movie.title %></h2>
-      <p>Sold by <%= purchase.movie.user.first_name %> <%= purchase.movie.user.last_name %></p>
+      <p>Request from <%= purchase.user.first_name %> <%= purchase.user.last_name %></p>
+      <p> <strong>Price: </strong><%= purchase.movie.price %>€</p>
+      <p><%= purchase.status %></p>
     </div>
-    <div class="card-purchase-status"><%= purchase.status %></div>
+    <div>
+    <% if purchase.status == 'Pending' %>
+      <div class="btn-status">
+        <%= link_to 'Accept', purchase_path(purchase, status: 'Accepted'), method: :patch %>
+      </div>
+      <div class="btn-status">
+        <%= link_to 'Decline', purchase_path(purchase, status: 'Declined'), method: :patch %>
+      </div>
+    <% elsif purchase.status == "Accepted" %>
+      <div class="btn-status-accepted">Accepted 😉 </div>
+      <div class="btn-status-disabled">Declined</div>
+    <% else %>
+      <div class="btn-status-disabled">Accepted</div>
+      <div class="btn-status-declined">Declined 😢 </div>
+    <% end %>
+    </div>
     </div>
   </div>
   <% end %>

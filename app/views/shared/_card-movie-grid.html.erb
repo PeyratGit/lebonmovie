@@ -4,15 +4,23 @@
   <div class="card-movie">
     <%= cl_image_tag movie.photo.key %>
     <div class="card-movie-genre"><%= movie.genre %></div>
-    <div class="card-movie-infos">
-      <div class="card-movie-title">
+    <div class="avatar-card-details">
+      <% if user_signed_in? %>
+        <%= cl_image_tag (current_user.photo.key), class:"avatar avatar-card", id:"navbarDropdown", data: {'bs-toggle': "dropdown"}, aria: {'haspopup': "true"}, aria: {'expanded': "false"} %>
+      <% else %>
+        <img class="avatar avatar-card" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png" />
+      <% end %>
+    </div>
+    <div class="card-movie-title">
         <h2><%= movie.title %></h2>
-      </div>
+    </div>
+    <div class="card-movie-infos">
       <div class="card-movie-details">
-      <h2><%= movie.imdb_rating %><i class="fa fa-star text-warning"></i></h2>
-      <p>Only <%= movie.price %>€!</p>
+      <h3 id="imdb"><%= movie.imdb_rating %><i class="fa fa-star text-warning"></i></h3>
+      <h3 id="price">Only <%= movie.price %>€!</h3>
       </div>
     </div>
+
   </div>
   <% end %>
   <% end %>

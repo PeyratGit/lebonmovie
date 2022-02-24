@@ -148,6 +148,51 @@
   opacity: 0.9;
   height: 24px;
   margin-right: 8px;
+  text-decoration: none;
+}
+
+.card-purchase-status-accepted {
+  color: white;
+  font-size: 12px;
+  border-radius: 7px;
+  background: #1EDD88;
+  height: 24px;
+  text-decoration: none;
+}
+
+.card-purchase-status-pending {
+  color: white;
+  font-size: 12px;
+  border-radius: 7px;
+  background: darkgrey;
+  height: 24px;
+  text-decoration: none;
+}
+
+.card-purchase-status-disabled-selected {
+  color: white;
+  padding: 2px 9px;
+  font-size: 12px;
+  border-radius: 7px;
+  background: #1EDD88;
+  opacity: 0.9;
+  height: 24px;
+  margin-right: 8px;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.card-purchase-status-disabled-unselected {
+  color: darkgrey;
+  padding: 2px 9px;
+  font-size: 12px;
+  border-radius: 7px;
+  background: rgba(200,200,200,0.9);
+  opacity: 0.9;
+  height: 24px;
+  margin-right: 8px;
+  pointer-events: none;
+  text-decoration: none;
 }
 
 // Smallest device

@@ -10,15 +10,22 @@
   </ul>
   </div>
   <% purchases = Purchase.where(user: current_user) %>
-  <% purchases.each do |purchase| %>
-  <div class="card-purchase mb-2">
+  <% purchases.reverse_each do |purchase| %>
+    <div class="card-purchase mb-2">
     <%= cl_image_tag purchase.movie.photo.key %>
     <div class="card-purchase-infos">
     <div class="card-purchase-details">
      <h2><%= purchase.movie.title %></h2>
       <p>Sold by <%= purchase.movie.user.first_name %> <%= purchase.movie.user.last_name %></p>
+      <p> <strong>Price: </strong><%= purchase.movie.price %>€</p>
     </div>
-    <div class="card-purchase-status"><%= purchase.status %></div>
+    <% if purchase.status == 'Pending' %>
+      <div class="btn-status-pending">Pending 😎 </div>
+    <% elsif purchase.status == "Accepted" %>
+      <div class="btn-status-accepted">Accepted 😉 </div>
+    <% else %>
+      <div class="btn-status-declined">Declined 😢 </div>
+    <% end %>
     </div>
   </div>
   <% end %>

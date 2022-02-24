@@ -22,3 +22,92 @@ $color: #992e38;
   align-content: center;
   margin-bottom: 6px;
 }
+
+.btn-status-accepted {
+  color: white;
+  padding: 2px 9px;
+  font-size: 12px;
+  border-radius: 7px;
+  background: #1EDD88;
+  opacity: 0.9;
+  height: 24px;
+  text-decoration: none;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+}
+
+.btn-status-pending {
+  color: white;
+  padding: 2px 9px;
+  font-size: 12px;
+  border-radius: 7px;
+  background: darkgrey;
+  opacity: 0.9;
+  height: 24px;
+  text-decoration: none;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+}
+
+.btn-status-declined {
+  color: white;
+  padding: 2px 9px;
+  font-size: 12px;
+  border-radius: 7px;
+  background: red;
+  opacity: 0.9;
+  height: 24px;
+  text-decoration: none;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+}
+
+.btn-status-disabled {
+  color: white;
+  padding: 2px 9px;
+  font-size: 12px;
+  border-radius: 7px;
+  background: darkgrey;
+  opacity: 0.2;
+  height: 24px;
+  text-decoration: none;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+}
+
+.btn-status {
+  color: white;
+  padding: 2px 9px;
+  font-size: 12px;
+  border-radius: 7px;
+  background: blue;
+  opacity: 0.9;
+  height: 24px;
+  text-decoration: none;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}

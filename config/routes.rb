@@ -19,6 +19,9 @@ Rails.application.routes.draw do
       get :bookings
       get :requests
     end
+    member do
+      patch '/rate', to: "purchases#rate"
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

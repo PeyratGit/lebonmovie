@@ -33,4 +33,8 @@ class PurchasesController < ApplicationController
 
   def update
   end
+  
+  def rate
+  end
+
 end

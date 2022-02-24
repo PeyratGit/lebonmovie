@@ -12,7 +12,7 @@ Movie.destroy_all
 User.destroy_all
 
 puts "Done !"
-
+urls = ["https://avatars.githubusercontent.com/u/52168643?v=4", "https://avatars.githubusercontent.com/u/95384661?v=4", "https://avatars.githubusercontent.com/u/96342482?v=4", "https://avatars.githubusercontent.com/u/78359730?v=4"]
 emails = ["peyrat.clement@gmail.com","reynal.julie@gmail.com","ouarzazi.sidney@gmail.com","deguitre.canelle@gmail.com"]
 passwords = ["123456","azerty","nbvcxw","qsdfgh"]
 firsts_names = ["clément","julie","sidney","canelle"]
@@ -28,6 +28,12 @@ puts "Creating users..."
     password: passwords[i],
     first_name: firsts_names[i],
     last_name: lasts_names[i],
+  )
+  file_url = urls[i]
+  users_models = User.all
+  users_models[i].photo.attach(
+    io: URI.open(file_url),
+    filename: "file#{i}.jpg"
   )
   i += 1
 end

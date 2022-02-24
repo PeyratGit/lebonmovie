@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :movies do
-    resources :purchases, only: [:new, :create]
+    resources :purchases, only: [:create]
     collection do
       get :action
       get :thriller

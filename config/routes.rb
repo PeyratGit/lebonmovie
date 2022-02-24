@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   end
   get '/my/movies', to: 'movies#my_movies'
   resources :purchases, except: [:delete, :new, :create] do
+    collection do
+      get :bookings
+      get :requests
+    end
     member do
       patch '/rate', to: "purchases#rate"
     end

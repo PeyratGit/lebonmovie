@@ -18,13 +18,27 @@ import { changeOnScroll } from "../plugins/change_navbar"
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-demo', {
-  title: "Thank your for your purchase!🎉",
-  text: "You successfully send a request to the owner, we alert you when we have a response",
-  icon: "success"
-});
-
 document.addEventListener('turbolinks:load', () => {
   changeOnScroll();
+  initSweetalert('#sweet-alert-purchase-movie', {
+    title: "Thank your for your purchase!🎉",
+    text: "You successfully send a request to the owner, we alert you when we have a response",
+    icon: "success"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#add-link');
+      link.click();
+    }
+  });
 
+  initSweetalert('#sweet-alert-delete-movie', {
+    title: "Are you sure?",
+    text: "This action cannot be reversed",
+    icon: "warning"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#delete-link');
+      link.click();
+    }
+  });
 })

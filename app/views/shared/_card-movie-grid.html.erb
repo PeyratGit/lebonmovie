@@ -2,7 +2,9 @@
   <% @movies.each do |movie| %>
   <%= link_to movie_path(movie) do %>
   <div class="card-movie">
-    <%= cl_image_tag movie.photo.key %>
+    <span class="zoom">
+      <%= cl_image_tag movie.photo.key %>
+    </span>
     <div class="card-movie-genre"><%= movie.genre %></div>
     <div class="avatar-card-details">
       <%= cl_image_tag (movie.user.photo.key), class:"avatar avatar-card" %>

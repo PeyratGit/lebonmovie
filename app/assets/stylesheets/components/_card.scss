@@ -24,6 +24,7 @@
   }
 }
 
+
 // CARD FOR MOVIES
 
 .card-movie-grid {
@@ -60,10 +61,18 @@
   // text-shadow: 1px 1px 3px rgb(0 0 0);
 }
 
-.card-movie > img {
+.zoom > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+  &:hover {
+    width: 110%;
+
+  }
+	-webkit-transform: scale(1);
+	transform: scale3d(1, 1, 1);
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
 }
 
 .card-movie h2 {

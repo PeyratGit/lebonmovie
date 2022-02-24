@@ -2,6 +2,8 @@ class MoviesController < ApplicationController
   def index
     if params[:query].present?
       @movies = Movie.search_full_text(params[:query])
+      @query = params[:query]
+      render :search_results
     else
       @movies = Movie.all
     end
@@ -66,7 +68,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-    redirect_to movies_path
+    redirect_to my_movies_path()
   end
 
   def my_movies

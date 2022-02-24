@@ -10,9 +10,11 @@ $color: #992e38;
 #new_movie {
   width: 50%;
   height: 50%;
-  padding: 5px;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
+  box-shadow: 0 0 15px lime;
+  border-radius: 1%;
 }
 
 form{
@@ -23,5 +25,35 @@ form{
     flex: 48%;
     margin-bottom: 5px !important;
     margin-right: 10px !important;
+  }
+  .submit-button-container {
+  margin-top: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 100%;
+  }
+}
+
+
+.new_user {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px
+  }
+  a {
+    text-decoration: none;
   }
 }

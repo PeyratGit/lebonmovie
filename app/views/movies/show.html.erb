@@ -31,11 +31,7 @@
         </div>
         <!-- MOVIE USER -->
         <div class="card-owner">
-          <% if user_signed_in? %>
-            <%= cl_image_tag (current_user.photo.key), class:"avatar avatar-card", id:"navbarDropdown", data: {'bs-toggle': "dropdown"}, aria: {'haspopup': "true"}, aria: {'expanded': "false"} %>
-          <% else %>
-            <img class="avatar avatar-card-show" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png" />
-          <% end %>
+          <%= cl_image_tag (@movie.user.photo.key), class:"avatar avatar-card-show" %>
           <p><strong> Owner : </strong><%= @movie.user.first_name%></p>
         </div>
     </div>

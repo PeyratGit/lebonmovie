@@ -15,7 +15,6 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 import { changeOnScroll } from "../plugins/change_navbar"
-changeOnScroll();
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
@@ -24,3 +23,8 @@ initSweetalert('#sweet-alert-demo', {
   text: "You successfully send a request to the owner, we alert you when we have a response",
   icon: "success"
 });
+
+document.addEventListener('turbolinks:load', () => {
+  changeOnScroll();
+
+})

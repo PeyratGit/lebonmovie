@@ -25,13 +25,18 @@
         <div class="card-rating">
           <p><strong> Rating : </strong><%= @movie.imdb_rating %></p>
         </div>
-        <!-- MOVIE USER -->
-        <div class="card-owner">
-          <p><strong> Owner : </strong><%= @movie.user.first_name%></p>
-        </div>
         <!-- MOVIE PRICE -->
         <div class="card-price">
           <p><strong> Price : </strong><%= @movie.price %></p>
+        </div>
+        <!-- MOVIE USER -->
+        <div class="card-owner">
+          <% if user_signed_in? %>
+            <%= cl_image_tag (current_user.photo.key), class:"avatar avatar-card", id:"navbarDropdown", data: {'bs-toggle': "dropdown"}, aria: {'haspopup': "true"}, aria: {'expanded': "false"} %>
+          <% else %>
+            <img class="avatar avatar-card-show" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png" />
+          <% end %>
+          <p><strong> Owner : </strong><%= @movie.user.first_name%></p>
         </div>
     </div>
       <div class="btn">
@@ -39,7 +44,7 @@
           <%= link_to 'Edit', edit_movie_path, class: "btn btn-ghost"%>
           <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost" %>
         <% end %>
-          <button id="sweet-alert-demo" class="btn btn-ghost"> Purchase </button>
-            </div>
+        <button id="sweet-alert-demo" class="btn btn-ghost"> Purchase </button>
+      </div>
     </div>
   </div>

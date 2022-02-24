@@ -1,12 +1,13 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin: 16px 32px;
 }
 
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,9 +15,9 @@
   font-size: 24px;
   font-weight: bold;
   border-radius: 5px;
-  margin: 16px;
+  margin: 8px;
   color: white;
-
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   a {
     color: white !important;
     text-decoration: none !important;
@@ -106,27 +107,27 @@
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }

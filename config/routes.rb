@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     end
   end
   get '/my/movies', to: 'movies#my_movies'
-  resources :purchases, except: [:delete, :new, :create]
+  resources :purchases, except: [:delete, :new, :create] do
+    member do
+      patch '/rate', to: "purchases#rate"
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

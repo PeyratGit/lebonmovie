@@ -1,20 +1,18 @@
 $color: #992e38;
 
 .card-product {
-  width: 61%;
+  width: 81%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 4px;
   margin: auto;
   background-color: white;
   display: flex;
-  flex-direction: column;
   flex-wrap: nowrap;
-  align-content: space-around;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
   padding: auto;
-  margin-top: 166px;
   border-radius: 2%;
+  flex-direction: row;
 }
 
 .title {
@@ -50,6 +48,9 @@ $color: #992e38;
 }
 
 .card-product img {
-  width: 50%;
+  width: 37%;
   margin-top: 2%;
+  margin-right: 3%;
+  margin-left: 2%;
+  margin-bottom: 2%;
 }

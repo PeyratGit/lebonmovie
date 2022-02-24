@@ -9,6 +9,7 @@
 puts "Destroying data..."
 
 Movie.destroy_all
+puts "movie destroyed"
 User.destroy_all
 
 puts "Done !"

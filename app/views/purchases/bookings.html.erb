@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="tab-container">
+  <ul class="list-inline tabs-underlined">
+    <li>
+      <a href="bookings" class="tab-underlined active">Bookings</a>
+    </li>
+    <li>
+      <a href="requests" class="tab-underlined">Requests</a>
+    </li>
+  </ul>
+  </div>
+  <% purchases = Purchase.where(user: current_user) %>
+  <% purchases.each do |purchase| %>
+  <div class="card-purchase mb-2">
+    <%= cl_image_tag purchase.movie.photo.key %>
+    <div class="card-purchase-infos">
+    <div class="card-purchase-details">
+     <h2><%= purchase.movie.title %></h2>
+      <p>Sold by <%= purchase.movie.user.first_name %> <%= purchase.movie.user.last_name %></p>
+    </div>
+    <div class="card-purchase-status"><%= purchase.status %></div>
+    </div>
+  </div>
+  <% end %>
+</div>

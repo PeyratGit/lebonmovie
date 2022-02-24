@@ -1,6 +1,14 @@
 class PurchasesController < ApplicationController
   def index
+    @purchases = Purchase.all
+  end
 
+  def bookings
+    @purchases = Purchase.all
+  end
+
+  def requests
+    @purchases = Purchase.all
   end
 
   def show
@@ -14,7 +22,7 @@ class PurchasesController < ApplicationController
     @purchase.user = current_user
     @purchase.status = "pending"
     if @purchase.save
-      redirect_to purchase_path(@purchase)
+      redirect_to bookings_purchases_path
     else
       render "movies/show"
     end

@@ -39,6 +39,6 @@
           <%= link_to 'Edit', edit_movie_path, class: "btn btn-ghost"%>
           <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost" %>
         <% end %>
-      <%= link_to 'Purchase', purchases_path(@purchases), class: "btn btn-ghost"%>
+      <%= link_to 'Purchase', movie_purchases_path(@movie), method: :post, class: "btn btn-ghost"%>
     </div>
   </div>

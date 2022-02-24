@@ -18,5 +18,6 @@
 
 .search-form-control .form-control:focus {
   outline: none !important;
-  width: 50%;
+  border-color: none !important;
+  box-shadow: 0 0 5px rgba(230,230,230,.6);
 }

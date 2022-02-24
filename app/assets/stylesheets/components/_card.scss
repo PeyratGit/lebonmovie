@@ -46,7 +46,6 @@
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
-
 }
 
 .card-movie-genre {
@@ -77,6 +76,12 @@
 }
 
 .card-movie h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-movie h3 {
   font-size: 12px;
   font-weight: bold;
   margin: 0;
@@ -98,10 +103,11 @@
 
 .card-movie-title {
   width: 80%;
+  padding: 16px;
 }
 
 .card-movie-details {
-  text-align: center;
+  text-align: left;
 }
 
 // CARD FOR PURCHASE
@@ -158,6 +164,10 @@
   height: 24px;
   margin-right: 8px;
 }
+
+// CARD FOR SHOW
+
+
 
 // Smallest device
 @media (min-width: 300px) and (max-width:100px) {

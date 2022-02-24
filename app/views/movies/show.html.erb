@@ -25,13 +25,14 @@
         <div class="card-rating">
           <p><strong> Rating : </strong><%= @movie.imdb_rating %></p>
         </div>
-        <!-- MOVIE USER -->
-        <div class="card-owner">
-          <p><strong> Owner : </strong><%= @movie.user.first_name%></p>
-        </div>
         <!-- MOVIE PRICE -->
         <div class="card-price">
           <p><strong> Price : </strong><%= @movie.price %></p>
+        </div>
+        <!-- MOVIE USER -->
+        <div class="card-owner">
+          <%= cl_image_tag (@movie.user.photo.key), class:"avatar avatar-card-show" %>
+          <p><strong> Owner : </strong><%= @movie.user.first_name%></p>
         </div>
     </div>
       <div class="btn">
@@ -41,8 +42,9 @@
             <%= link_to movie_path(@movie) , method: :delete, id: "delete-link", class: "hidden" do %>
           <% end %>
         <% end %>
-          <button id="sweet-alert-purchase-movie" class="btn btn-ghost"> Purchase </button>
-          <%= link_to "", movie_purchases_path(@movie), method: :post, id: "add-link", class: "hidden" %>
-            </div>
+
+        <button id="sweet-alert-purchase-movie" class="btn btn-ghost"> Purchase </button>
+        <%= link_to "", movie_purchases_path(@movie), method: :post, id: "add-link", class: "hidden" %>
+      </div>
     </div>
   </div>

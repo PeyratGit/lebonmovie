@@ -3,7 +3,7 @@
     <%= cl_image_tag(@movie.photo.key) %>
     <div class="card-product-infos">
       <div class="title">
-        <h1><strong> Title :</strong><%= @movie.title %></h1>
+        <h1><%= @movie.title %></h1>
       </div>
         <!-- MOVIE YEAR -->
         <div class="card-date">
@@ -26,8 +26,8 @@
           <p><strong> Rating : </strong><%= @movie.imdb_rating %></p>
         </div>
         <!-- MOVIE USER -->
-        <div class="card-user">
-          <p><strong> First Name : </strong><%= @movie.user.first_name%></p>
+        <div class="card-owner">
+          <p><strong> Owner : </strong><%= @movie.user.first_name%></p>
         </div>
         <!-- MOVIE PRICE -->
         <div class="card-price">
@@ -39,5 +39,6 @@
           <%= link_to 'Edit', edit_movie_path, class: "btn btn-ghost"%>
           <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost" %>
         <% end %>
-        <%= link_to 'Purchase', purchases_path(@purchases), class: "btn btn-ghost"%>
-      </div>
+      <%= link_to 'Purchase', purchases_path(@purchases), class: "btn btn-ghost"%>
+    </div>
+  </div>

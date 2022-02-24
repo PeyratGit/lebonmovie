@@ -9,14 +9,15 @@
 puts "Destroying data..."
 
 Movie.destroy_all
+puts "movie destroyed"
 User.destroy_all
 
 puts "Done !"
 urls = ["https://avatars.githubusercontent.com/u/52168643?v=4", "https://avatars.githubusercontent.com/u/95384661?v=4", "https://avatars.githubusercontent.com/u/96342482?v=4", "https://avatars.githubusercontent.com/u/78359730?v=4"]
 emails = ["peyrat.clement@gmail.com","reynal.julie@gmail.com","ouarzazi.sidney@gmail.com","deguitre.canelle@gmail.com"]
-passwords = ["123456","azerty","nbvcxw","qsdfgh"]
-firsts_names = ["clément","julie","sidney","canelle"]
-lasts_names = ["peyrat","reynal","ouarzazi","deguitre"]
+passwords = ["adminp","adminr","admino","admind"]
+firsts_names = ["Clément","Julie","Sidney","Canelle"]
+lasts_names = ["Peyrat","Reynal","Ouarzazi","Deguitre"]
 directors = ["Steven Spielberg", "Christopher Nolan", "Quentin Tarantino", " Martin Scorsese", "Alfred Hitchcock", "Stanley Kubrick", "Tim Burton", ""]
 # genres = ["Horror", "Comedy", "Action", "Romance", "Blockbuster", "Drama", "Animation", "Fantasy", "Mystery", "Thriller", "Western"]
 i = 0

@@ -24,6 +24,7 @@
   }
 }
 
+
 // CARD FOR MOVIES
 
 .card-movie-grid {
@@ -45,7 +46,6 @@
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
-
 }
 
 .card-movie-genre {
@@ -61,13 +61,27 @@
   // text-shadow: 1px 1px 3px rgb(0 0 0);
 }
 
-.card-movie > img {
+.zoom > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+  &:hover {
+    width: 110%;
+
+  }
+	-webkit-transform: scale(1);
+	transform: scale3d(1, 1, 1);
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
 }
 
 .card-movie h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-movie h3 {
   font-size: 12px;
   font-weight: bold;
   margin: 0;
@@ -89,10 +103,11 @@
 
 .card-movie-title {
   width: 80%;
+  padding: 16px;
 }
 
 .card-movie-details {
-  text-align: center;
+  text-align: left;
 }
 
 // CARD FOR PURCHASE
@@ -194,6 +209,10 @@
   pointer-events: none;
   text-decoration: none;
 }
+
+// CARD FOR SHOW
+
+
 
 // Smallest device
 @media (min-width: 300px) and (max-width:100px) {

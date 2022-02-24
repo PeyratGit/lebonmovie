@@ -33,7 +33,7 @@
           </li>
           <li class="nav-item dropdown">
             <% if user_signed_in? %>
-              <%= cl_image_tag (current_user.photo.key), class:"avatar dropdown-toggle", id:"navbarDropdown", data: {'bs-toggle': "dropdown"}, aria: {'haspopup': "true"}, aria: {'expanded': "false"} %>
+              <%= cl_image_tag (current_user.photo.key), class:"avatar dropdown-toggle", id:"navbarDropdown", data: {'bs-toggle': "dropdown"}, aria: {'haspopup': "true"}, aria: {'expanded': "false"}, width: 40, height: 40, object: {'fit': 'cover'}, crop: :thumb, gravity: :face %>
             <% else %>
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png" />
             <% end %>

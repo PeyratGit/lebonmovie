@@ -2,7 +2,7 @@ $color: #992e38;
 
 .card-product {
   width: 81%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 15px rgba(0,0,0,0.2);
   padding: 4px;
   margin: auto;
   background-color: white;
@@ -13,10 +13,12 @@ $color: #992e38;
   padding: auto;
   border-radius: 2%;
   flex-direction: row;
+  margin-bottom: 1%
 }
 
 .title {
   display: flex;
+  color: $color;
   width: 100%;
   justify-content: center;
 }
@@ -48,7 +50,7 @@ $color: #992e38;
 }
 
 .card-product img {
-  width: 37%;
+  width: 35%;
   margin-top: 2%;
   margin-right: 3%;
   margin-left: 2%;

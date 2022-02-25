@@ -52,7 +52,7 @@ i = 0
 movie_genre = ""
 movie_director = ""
 
-movies.first(1).each do |movie|
+movies.first(50).each do |movie|
   crew_list = JSON.parse(URI.open("http://tmdb.lewagon.com/movie/#{movie['id']}/credits").read)["crew"]
   crew_list.each do |crew_member|
     if crew_member['job'] == "Director"

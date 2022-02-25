@@ -11,7 +11,7 @@
   </div>
   <% purchases = Purchase.where('movie_id IN (?)', Movie.where(user: current_user).map { |movie| movie.id } ) %>
   <% purchases.reverse_each do |purchase| %>
-  <div class="card-purchase mb-2">
+  <div class="card-purchase <%= 'activation' if purchase.status == 'Pending'  %> mb-2">
     <%= cl_image_tag purchase.movie.photo.key %>
     <div class="card-purchase-infos">
     <div class="card-purchase-details">

@@ -15,14 +15,28 @@
     <%= cl_image_tag purchase.movie.photo.key %>
     <div class="card-purchase-infos">
     <div class="card-purchase-details">
-     <h2><%= purchase.movie.title %></h2>
+      <h2><%= purchase.movie.title %></h2>
       <p>Sold by <%= purchase.movie.user.first_name %> <%= purchase.movie.user.last_name %></p>
-      <p> <strong>Price: </strong><%= purchase.movie.price %>€</p>
+      <p> <strong>Price: </strong>$<%= purchase.movie.price %></p>
     </div>
     <% if purchase.status == 'Pending' %>
       <div class="btn-status-pending">Pending 😎 </div>
     <% elsif purchase.status == "Accepted" %>
+      <div>
       <div class="btn-status-accepted">Accepted 😉 </div>
+      <% if purchase.rating.nil? %>
+      <p class="rating-spacing">Rate <%= purchase.movie.user.first_name %></p>
+      <div class="rating rating-spacing">
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '1'), method: :patch %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '2'), method: :patch %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '3'), method: :patch %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '4'), method: :patch %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '5'), method: :patch %></span>
+      </div>
+      <% else %>
+      <p class="rating-spacing">Rate: <%= purchase.rating %></p>
+      <% end %>
+      </div>
     <% else %>
       <div class="btn-status-declined">Declined 😢 </div>
     <% end %>

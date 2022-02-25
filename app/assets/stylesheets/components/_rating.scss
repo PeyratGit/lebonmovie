@@ -1,0 +1,25 @@
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  color: #a7a72c;
+  a {
+    text-decoration: none;
+    color: #a7a72c;
+  }
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  //  content: "\2605";
+   position: absolute;
+}
+
+.rating-spacing {
+  display: flex;
+  justify-content: center;
+  margin: 0 8px;
+}

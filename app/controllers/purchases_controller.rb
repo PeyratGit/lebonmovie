@@ -39,6 +39,9 @@ class PurchasesController < ApplicationController
   end
 
   def rate
+    @purchase = Purchase.find(params[:id])
+    @purchase.rating = params[:rating]
+    @purchase.save
+    redirect_to bookings_purchases_path
   end
-
 end

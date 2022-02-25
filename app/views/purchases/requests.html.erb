@@ -15,7 +15,7 @@
     <%= cl_image_tag purchase.movie.photo.key %>
     <div class="card-purchase-infos">
     <div class="card-purchase-details">
-     <h2><%= purchase.movie.title %></h2>
+      <h2><%= purchase.movie.title %></h2>
       <p>Request from <%= purchase.user.first_name %> <%= purchase.user.last_name %></p>
       <p> <strong>Price: </strong><%= purchase.movie.price %>€</p>
       <p><%= purchase.status %></p>

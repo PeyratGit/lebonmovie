@@ -15,9 +15,9 @@
     <%= cl_image_tag purchase.movie.photo.key %>
     <div class="card-purchase-infos">
     <div class="card-purchase-details">
-     <h2><%= purchase.movie.title %></h2>
+      <h2><%= purchase.movie.title %></h2>
       <p>Sold by <%= purchase.movie.user.first_name %> <%= purchase.movie.user.last_name %></p>
-      <p> <strong>Price: </strong><%= purchase.movie.price %>€</p>
+      <p> <strong>Price: </strong>$<%= purchase.movie.price %></p>
     </div>
     <% if purchase.status == 'Pending' %>
       <div class="btn-status-pending">Pending 😎 </div>

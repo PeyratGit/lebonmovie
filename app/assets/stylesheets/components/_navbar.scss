@@ -1,7 +1,6 @@
 $color: white;
 $spacer: 8px;
 
-
 .navbar-lewagon {
   position: fixed;
   width: 100%;
@@ -36,6 +35,7 @@ $spacer: 8px;
 .search-form-control {
   display: flex;
   align-items: center;
+  width: 400px;
 }
 
 #search-btn {
@@ -51,9 +51,17 @@ $spacer: 8px;
   border: 0px;
 }
 
+#sell-btn {
+  height: 2.5rem;
+  width: 140px;
+  border-radius: 20px;
+  background-color: #992f39;
+  color: white;
+}
+
 .nav-link {
-  margin-left: 16px;
-  margin-right: 16px;
+  width: 150px;
+  text-align: center;
 }
 
 .form-control:focus {

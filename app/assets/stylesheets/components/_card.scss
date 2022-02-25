@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 16px 32px;
+  a {
+    color: white !important;
+    text-decoration: none !important;
+  }
 }
 
 .card-category {
@@ -11,19 +15,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   font-size: 24px;
   font-weight: bold;
   border-radius: 5px;
   margin: 8px;
-  color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  a {
-    color: white !important;
-    text-decoration: none !important;
+  transition: all 0.4s;
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
   }
 }
 
+.card-category:hover {
+  transform: scale(1.1);
+}
 
 // CARD FOR MOVIES
 
@@ -46,6 +52,15 @@
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
+  height: 370px;
+}
+
+#movie-title {
+  h2 {
+    color: black;
+    font-size: 28px;
+    font-weight: lighter;
+  }
 }
 
 .card-movie-genre {
@@ -81,12 +96,6 @@
   margin: 0;
 }
 
-.card-movie h3 {
-  font-size: 12px;
-  font-weight: bold;
-  margin: 0;
-}
-
 .card-movie p {
   font-size: 8px;
   opacity: .7;
@@ -102,14 +111,40 @@
 }
 
 .card-movie-title {
-  width: 80%;
-  padding: 16px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
 }
 
 .card-movie-details {
   text-align: left;
 }
 
+#movie-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 4;
+  width: 95%;
+  padding: 16px;
+}
+
+.card-movie-infos {
+  display: flex;
+  justify-content: space-between;
+}
+
+#imdb {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+#price {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-right: 8px;
+}
 // CARD FOR PURCHASE
 
 .card-purchase {

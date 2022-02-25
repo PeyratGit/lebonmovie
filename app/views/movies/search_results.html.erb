@@ -1,5 +1,5 @@
 <div class="filmstrip">
-    <h1><strong><i class="fa fa-search"></i> Results for "<%=@query%>"</strong></h1>
+    <h1><strong><i class="fa fa-search"></i>    <%=pluralize(@movies.count, "result") %> for "<%=@query%>"</strong></h1>
 </div>
 <%= render 'shared/card-category' %>
 

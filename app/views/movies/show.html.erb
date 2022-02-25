@@ -41,9 +41,10 @@
             <button id="sweet-alert-delete-movie" class="btn btn-ghost"> Delete </button>
             <%= link_to movie_path(@movie) , method: :delete, id: "delete-link", class: "hidden" do %>
           <% end %>
+        <% else %>
+          <button id="sweet-alert-purchase-movie" class="btn btn-ghost"> Purchase </button>
+          <%= link_to "", movie_purchases_path(@movie), method: :post, id: "add-link", class: "hidden" %>
         <% end %>
-        <button id="sweet-alert-purchase-movie" class="btn btn-ghost"> Purchase </button>
-        <%= link_to "", movie_purchases_path(@movie), method: :post, id: "add-link", class: "hidden" %>
       </div>
     </div>
   </div>

@@ -27,14 +27,32 @@
       <% if purchase.rating.nil? %>
       <p class="rating-spacing">Rate <%= purchase.movie.user.first_name %></p>
       <div class="rating rating-spacing">
-      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '1'), method: :patch %></span>
-      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '2'), method: :patch %></span>
-      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '3'), method: :patch %></span>
-      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '4'), method: :patch %></span>
       <span><%= link_to '☆', rate_purchase_path(purchase, rating: '5'), method: :patch %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '4'), method: :patch %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '3'), method: :patch %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '2'), method: :patch %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '1'), method: :patch %></span>
+      </div>
+      <% elsif purchase.rating == 1.0 %>
+      <div class="rating rating-spacing">
+      <span>☆</span>☆<span>☆</span>☆<span>&#x2605</span>
+      </div>
+      <% elsif purchase.rating == 2.0 %>
+      <div class="rating rating-spacing">
+      <span>☆</span>☆<span>☆</span>&#x2605<span>&#x2605</span>
+      </div>
+      <% elsif purchase.rating == 3.0 %>
+      <div class="rating rating-spacing">
+      <span>☆</span>☆<span>&#x2605</span>&#x2605<span>&#x2605</span>
+      </div>
+      <% elsif purchase.rating == 4.0 %>
+      <div class="rating rating-spacing">
+      <span>☆</span>&#x2605<span>&#x2605</span>&#x2605<span>&#x2605</span>
       </div>
       <% else %>
-      <p class="rating-spacing">Rate: <%= purchase.rating %></p>
+      <div class="rating rating-spacing">
+      <span>&#x2605</span>&#x2605<span>&#x2605</span>&#x2605<span>&#x2605</span>
+      </div>
       <% end %>
       </div>
     <% else %>

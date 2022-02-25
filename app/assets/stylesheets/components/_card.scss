@@ -52,11 +52,14 @@
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
+  height: 370px;
 }
 
 #movie-title {
   h2 {
     color: black;
+    font-size: 28px;
+    font-weight: lighter;
   }
 }
 
@@ -93,12 +96,6 @@
   margin: 0;
 }
 
-.card-movie h3 {
-  font-size: 12px;
-  font-weight: bold;
-  margin: 0;
-}
-
 .card-movie p {
   font-size: 8px;
   opacity: .7;
@@ -114,14 +111,40 @@
 }
 
 .card-movie-title {
-  width: 80%;
-  padding: 16px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
 }
 
 .card-movie-details {
   text-align: left;
 }
 
+#movie-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 4;
+  width: 95%;
+  padding: 16px;
+}
+
+.card-movie-infos {
+  display: flex;
+  justify-content: space-between;
+}
+
+#imdb {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+#price {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-right: 8px;
+}
 // CARD FOR PURCHASE
 
 .card-purchase {

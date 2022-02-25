@@ -7,13 +7,14 @@
         </div>
       </div>
       <div class="search">
-        <%= form_tag movies_path,class:"simple_form search", method: :get do %>
+        <%= form_tag movies_path,class:"simple_form search", autocomplete:"off", method: :get do %>
           <div class="search-form-control form-group">
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
-              placeholder: "Find a movie"
+              placeholder: "Find a movie",
             %>
+            <div id="result"></div>
             <button name="button" type="submit" class="btn btn-flat" id="search-btn">
               <i class="fa fa-search"></i>
             </button>

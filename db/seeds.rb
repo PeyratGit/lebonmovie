@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# require 'openssl'
+# OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 puts "Destroying data..."
 
 Movie.destroy_all
@@ -48,8 +50,15 @@ movies = JSON.parse(URI.open("http://tmdb.lewagon.com/movie/popular").read)["res
 puts "Creating movies..."
 i = 0
 movie_genre = ""
+movie_director = ""
 
-movies.first(20).each do |movie|
+movies.first(1).each do |movie|
+  crew_list = JSON.parse(URI.open("http://tmdb.lewagon.com/movie/#{movie['id']}/credits").read)["crew"]
+  crew_list.each do |crew_member|
+    if crew_member['job'] == "Director"
+      movie_director = crew_member['name']
+    end
+  end
   genre_list = JSON.parse(URI.open("http://tmdb.lewagon.com/genre/movie/list").read)["genres"]
   genre_list.each do |genre|
     if genre["id"] == movie["genre_ids"][0]
@@ -62,7 +71,7 @@ movies.first(20).each do |movie|
     year: movie['release_date'].first(4),
     imdb_rating: movie["vote_average"],
     description: movie['overview'],
-    director: directors.sample,
+    director: movie_director,
     genre: movie_genre,
     user_id: users.sample.id,
     price: rand(1.00..10).round(2),

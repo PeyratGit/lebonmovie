@@ -16,7 +16,7 @@ const changeOnScroll = () => {
       if (window.scrollY >= 350) {
         navbar.style.backgroundColor = 'white';
         navLinks.forEach((el) => el.style.color = 'black');
-        searchQuery.style.border = '1px solid black';
+        searchQuery.style.border = '1px solid #ced4da';
       } else {
         navbar.style.backgroundColor = 'transparent';
         navLinks.forEach((el) => el.style.color = 'white');

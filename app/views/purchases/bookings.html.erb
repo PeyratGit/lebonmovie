@@ -11,7 +11,7 @@
   </div>
   <% purchases = Purchase.where(user: current_user) %>
   <% purchases.reverse_each do |purchase| %>
-    <div class="card-purchase mb-2">
+    <div class="card-purchase <%= 'activation' if purchase.status == 'Pending'  %> mb-2">
     <%= cl_image_tag purchase.movie.photo.key %>
     <div class="card-purchase-infos">
     <div class="card-purchase-details">
@@ -27,11 +27,11 @@
       <% if purchase.rating.nil? %>
       <p class="rating-spacing">Rate <%= purchase.movie.user.first_name %></p>
       <div class="rating rating-spacing">
-      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '5'), method: :patch %></span>
-      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '4'), method: :patch %></span>
-      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '3'), method: :patch %></span>
-      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '2'), method: :patch %></span>
-      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '1'), method: :patch %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '5'), method: :patch, id: 'star_1' %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '4'), method: :patch, id: 'star_2' %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '3'), method: :patch, id: 'star_3' %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '2'), method: :patch, id: 'star_4' %></span>
+      <span><%= link_to '☆', rate_purchase_path(purchase, rating: '1'), method: :patch, id: 'star_5' %></span>
       </div>
       <% elsif purchase.rating == 1.0 %>
       <div class="rating rating-spacing">

@@ -15,8 +15,8 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 import { changeOnScroll } from "../plugins/change_navbar"
-
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { rateOnHover } from "../packs/rating"
 
 document.addEventListener('turbolinks:load', () => {
   changeOnScroll();
@@ -41,4 +41,6 @@ document.addEventListener('turbolinks:load', () => {
       link.click();
     }
   });
+
+  rateOnHover();
 })

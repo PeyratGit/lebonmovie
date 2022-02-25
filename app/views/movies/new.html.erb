@@ -3,7 +3,7 @@
     <h1>Sell your movie !</h1>
   </div>
   <div class="form-container">
-    <%= simple_form_for [@movie] do |f| %>
+    <%= simple_form_for [@movie], autocomplete:"off" do |f| %>
     <%= f.input :title, placeholder: "Avatar"  %>
     <br>
     <%= f.input :genre, placeholder: "Action", collection: ["Action", "Comedy", "Fantasy", "Horror", "Crime", "Thriller", "Animation"] %>
@@ -21,7 +21,7 @@
     <%= f.input :photo, as: :file %>
     <br>
     <div class="submit-button-container">
-      <%= f.button :submit, class:"btn btn-ghost" %>
+      <%= f.button :submit, 'Sell movie', class:"btn btn-ghost" %>
     </div>
     <% end %>
   </div>

@@ -43,6 +43,8 @@
                 <%= link_to "Register", new_user_registration_path, class:"dropdown-item" %>
               <% else %>
                 <%= link_to "My movies", my_movies_path, class:"dropdown-item" %>
+                <%= link_to "My bookings", bookings_purchases_path, class:"dropdown-item" %>
+                <%= link_to "My requests", requests_purchases_path, class:"dropdown-item" %>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
               <% end %>
             </div>

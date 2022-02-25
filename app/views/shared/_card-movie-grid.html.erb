@@ -10,12 +10,12 @@
       <%= cl_image_tag (movie.user.photo.key), class:"avatar avatar-card" %>
     </div>
     <div class="card-movie-title">
-        <h2><%= movie.title %></h2>
+        <h2 id="movie-title"><%= movie.title %></h2>
     </div>
     <div class="card-movie-infos">
       <div class="card-movie-details">
       <h3 id="imdb"><%= movie.imdb_rating %><i class="fa fa-star text-warning"></i></h3>
-      <h3 id="price">Only <%= movie.price %>€!</h3>
+      <h3 id="price">Only $<%= movie.price %></h3>
       </div>
     </div>
 

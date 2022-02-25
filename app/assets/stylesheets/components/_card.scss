@@ -54,6 +54,12 @@
   position: relative;
 }
 
+#movie-title {
+  h2 {
+    color: black;
+  }
+}
+
 .card-movie-genre {
   position: absolute;
   right: 4px;

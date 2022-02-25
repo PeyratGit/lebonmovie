@@ -3,6 +3,7 @@ const changeOnScroll = () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const bannerHome = document.querySelector(".banner-home");
   const searchQuery = document.querySelector("#query");
+  const buyButtun = document.getElementById('buy-btn');
 
   console.log(bannerHome);
   console.log(navbar);
@@ -15,11 +16,13 @@ const changeOnScroll = () => {
     window.onscroll = function() {
       if (window.scrollY >= 350) {
         navbar.style.backgroundColor = 'white';
-        navLinks.forEach((el) => el.style.color = 'black');
+        //navLinks.forEach((el) => el.style.color = 'black');
+        buyButtun.style.color = 'black';
         searchQuery.style.border = '1px solid #ced4da';
       } else {
         navbar.style.backgroundColor = 'transparent';
-        navLinks.forEach((el) => el.style.color = 'white');
+        //navLinks.forEach((el) => el.style.color = 'white');
+        buyButtun.style.color = 'white';
         searchQuery.style.border = 'none';
       }
     }
